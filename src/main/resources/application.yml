@@ -1,0 +1,19 @@
+server:
+  port: 8080
+# 微信支付相关参数
+wx:
+  pay:
+    # 商户号
+    mch-id: 1558950191
+    # 微信公众号或者小程序等的appid.
+    app-id: wx74862e0dfcf69954
+    # 证书序列号(选填)
+#    cert-serial-no:
+    # 商户私钥文件
+    private-key-path: classpath:/file/apiclient_key.pem
+    # 商户公钥文件
+    private-cert-path: classpath:/file/apiclient_cert.pem
+    # APIv3密钥
+    api-v3-key: UDuLFDcmy5Eb6o0nTNZdu6ek4DDh4K8B
+    # 接收结果通知地址
+    notify-url: https://de06-211-93-248-135.ngrok-free.app/weixin/pay/notify
