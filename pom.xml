@@ -9,6 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <packaging>jar</packaging>
     <groupId>com.github.Sigma429</groupId>
     <artifactId>weixin-java-pay</artifactId>
     <version>0.0.1</version>
@@ -68,5 +69,15 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <snapshotRepository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
