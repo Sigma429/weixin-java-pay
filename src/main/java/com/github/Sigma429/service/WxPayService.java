@@ -15,7 +15,7 @@ import java.io.IOException;
  * Package:com.github.Sigma429.service
  * Description:
  * 微信支付接口
- * @Author:14亿少女的梦-苏信玮
+ * @Author:14亿少女的梦-Sigma429
  * @Create:2023/10/17 - 14:49
  * @Version:v1.0
  */

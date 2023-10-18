@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
  * ClassName:WeixinNotifyUtils
  * Package:tyut.selab.a2.biomassmall.util
  * Description:
- * @Author:14亿少女的梦-苏信玮
+ * @Author:14亿少女的梦-Sigma429
  * @Create:2023/08/23 - 14:49
  * @Version:v1.0
  */

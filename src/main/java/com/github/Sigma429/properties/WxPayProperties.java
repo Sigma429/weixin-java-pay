@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * Package:tyut.selab.a2.biomassmall.properties
  * Description:
  * 微信支付属性类
- * @Author:14亿少女的梦-苏信玮
+ * @Author:14亿少女的梦-Sigma429
  * @Create:2023/08/23 - 14:48
  * @Version:v1.0
  */

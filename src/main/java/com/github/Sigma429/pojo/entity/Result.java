@@ -5,7 +5,7 @@ import lombok.Data;
  * ClassName:Result
  * Package:com.github.Sigma429.pojo.entity
  * Description:
- * @Author:14亿少女的梦-苏信玮
+ * @Author:14亿少女的梦-Sigma429
  * @Create:2023/08/23 - 14:48
  * @Version:v1.0
  */

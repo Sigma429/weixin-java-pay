@@ -28,7 +28,7 @@ import java.util.HashMap;
  * Package:com.github.Sigma429.service.impl
  * Description:
  * 微信支付接口实现类
- * @Author:14亿少女的梦-苏信玮
+ * @Author:14亿少女的梦-Sigma429
  * @Create:2023/10/17 - 14:47
  * @Version:v1.0
  */

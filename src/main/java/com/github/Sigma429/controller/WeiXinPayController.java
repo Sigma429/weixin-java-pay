@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  * Package:com.github.Sigma429.controller
  * Description:
  * 微信支付模块
- * @Author:14亿少女的梦-苏信玮
+ * @Author:14亿少女的梦-Sigma429
  * @Create:2023/08/23 - 14:47
  * @Version:v1.0
  */
