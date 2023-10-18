@@ -2,8 +2,8 @@ package com.github.Sigma429.config;
 
 
 import com.github.Sigma429.properties.WxPayProperties;
-import com.github.Sigma429.service.WxPayService;
-import com.github.Sigma429.service.impl.WxPayServiceImpl;
+import com.github.Sigma429.service.WXPayService;
+import com.github.Sigma429.service.impl.WXPayServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Configuration;
  * @Version:v1.0
  */
 @Configuration
-@ConditionalOnClass(WxPayService.class)
+@ConditionalOnClass(WXPayService.class)
 @EnableConfigurationProperties(WxPayProperties.class)
 public class WxPayConfig {
     @Autowired
@@ -32,8 +32,8 @@ public class WxPayConfig {
      * @return 微信支付接口
      */
     @Bean
-    @ConditionalOnMissingBean(WxPayService.class)
-    public WxPayService wxPayService() {
+    @ConditionalOnMissingBean(WXPayService.class)
+    public WXPayService wxPayService() {
         com.github.binarywang.wxpay.config.WxPayConfig payConfig = new com.github.binarywang.wxpay.config.WxPayConfig();
         payConfig.setMchId(properties.getMchId());
         payConfig.setAppId(properties.getAppId());
@@ -42,7 +42,7 @@ public class WxPayConfig {
         payConfig.setPrivateCertPath(properties.getPrivateCertPath());
         payConfig.setApiV3Key(properties.getApiV3Key());
         payConfig.setNotifyUrl(properties.getNotifyUrl());
-        WxPayServiceImpl wxPayService = new WxPayServiceImpl();
+        WXPayServiceImpl wxPayService = new WXPayServiceImpl();
         wxPayService.setConfig(payConfig);
         return wxPayService;
     }

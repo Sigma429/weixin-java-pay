@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * ClassName:WxPayService
+ * ClassName:WXPayService
  * Package:com.github.Sigma429.service
  * Description:
  * 微信支付接口
@@ -19,7 +19,7 @@ import java.io.IOException;
  * @Create:2023/10/17 - 14:49
  * @Version:v1.0
  */
-public interface WxPayService {
+public interface WXPayService {
     /**
      * 调用统一下单接口，并组装生成支付所需参数对象.
      * @param <T>     请使用{@link com.github.binarywang.wxpay.bean.result.WxPayUnifiedOrderV3Result}里的内部类或字段

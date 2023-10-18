@@ -1,6 +1,6 @@
 package com.github.Sigma429.service.impl;
 
-import com.github.Sigma429.service.WxPayService;
+import com.github.Sigma429.service.WXPayService;
 import com.github.Sigma429.util.WeiXinNotifyUtils;
 import com.github.binarywang.wxpay.bean.notify.SignatureHeader;
 import com.github.binarywang.wxpay.bean.notify.WxPayOrderNotifyV3Result;
@@ -24,7 +24,7 @@ import java.util.HashMap;
 
 
 /**
- * ClassName:WxPayServiceImpl
+ * ClassName:WXPayServiceImpl
  * Package:com.github.Sigma429.service.impl
  * Description:
  * 微信支付接口实现类
@@ -32,7 +32,7 @@ import java.util.HashMap;
  * @Create:2023/10/17 - 14:47
  * @Version:v1.0
  */
-public class WxPayServiceImpl extends com.github.binarywang.wxpay.service.impl.WxPayServiceImpl implements WxPayService {
+public class WXPayServiceImpl extends com.github.binarywang.wxpay.service.impl.WxPayServiceImpl implements WXPayService {
     @Override
     public <T> T createOrderV3(WxPayUnifiedOrderV3Request request) throws WxPayException {
         return super.createOrderV3(TradeTypeEnum.NATIVE, request);

@@ -1,7 +1,7 @@
 package com.github.Sigma429.controller;
 
 import com.github.Sigma429.pojo.entity.Result;
-import com.github.Sigma429.service.WxPayService;
+import com.github.Sigma429.service.WXPayService;
 import com.github.binarywang.wxpay.bean.notify.WxPayOrderNotifyV3Result;
 import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderV3Request;
 import com.github.binarywang.wxpay.bean.result.WxPayOrderQueryV3Result;
@@ -26,7 +26,7 @@ import java.math.BigDecimal;
 @Slf4j
 public class WeiXinPayController {
     @Autowired
-    private WxPayService wxPayService;
+    private WXPayService wxPayService;
 
     /**
      * Native下单（即创建支付二维码）
