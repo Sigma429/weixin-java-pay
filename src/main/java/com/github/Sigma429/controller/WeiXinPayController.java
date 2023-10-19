@@ -57,7 +57,7 @@ public class WeiXinPayController {
         String codeUrl = wxPayService.createOrderV3(request);
 
         // 测试把二维码输出到本地,正式环境通过流给前端
-        wxPayService.printQRCodeToLocal(codeUrl, new StringBuilder("C:\\Users\\10597\\Desktop\\demo\\demo.jpg"));
+        // wxPayService.printQRCodeToLocal(codeUrl, new StringBuilder("C:\\Users\\10597\\Desktop\\demo\\demo.jpg"));
 
         return Result.success(codeUrl);
     }
