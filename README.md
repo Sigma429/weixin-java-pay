@@ -1,9 +1,7 @@
 ## 微信Native支付
-本项目基于SpringBoot3.1.4版本
+本项目基于SpringBoot3.1.4版本实现
 
-只简单实现了Native下单接口、查询订单接口、回调接口以及自定义的输出二维码到本地接口
-
-直接导入依赖配置好文件即可使用
+只简单实现了Native下单接口、查询订单接口、回调接口以及自定义的输出二维码到本地的接口
 
 ### 实现步骤
 
@@ -155,9 +153,19 @@ public class WxPayProperties {
 
 ```
 
-#### 4.Controller层使用
 
-DemoController
+
+==至此配置已完成==
+
+
+
+### Controller层使用
+
+```java
+// 回调接口相比其他接口，需加上@NativeNotify注解实现AOP
+```
+
+#### DemoController
 
 ```java
 package com.github.Sigma429.controller;
