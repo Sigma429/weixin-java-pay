@@ -1,4 +1,4 @@
-com\github\Sigma429\service\impl\WXPayServiceImpl.class
 com\github\Sigma429\pojo\entity\Result.class
 com\github\Sigma429\service\WXPayService.class
+com\github\Sigma429\service\impl\WXPayServiceImpl.class
 com\github\Sigma429\util\WeiXinNotifyUtils.class
