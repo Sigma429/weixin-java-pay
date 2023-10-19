@@ -4,7 +4,19 @@
 
 直接导入依赖配置好文件即可使用
 
-### 配置文件
+### 实现步骤
+
+#### 1.导入依赖
+
+```xml
+		<dependency>
+            <groupId>com.github.Sigma429</groupId>
+            <artifactId>weixin-java-pay</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+```
+
+#### 2.配置文件
 
 ```java
 // 商户公钥和私钥文件放在resources下并配置路径
@@ -31,20 +43,134 @@ wx:
     notify-url: https://de06-211-93-248-135.ngrok-free.app/weixin/pay/notify
 ```
 
-### DemoController
+#### 3.导入两个配置类在config包下
+
+```java
+package com.github.Sigma429.config;
+
+
+import com.github.Sigma429.service.WXPayService;
+import com.github.Sigma429.service.impl.WXPayServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * ClassName:WxPayConfig
+ * Package:com.github.Sigma429.config
+ * Description:
+ * 微信支付自动配置
+ * @Author:14亿少女的梦-Sigma429
+ * @Create:2023/10/17 - 18:07
+ * @Version:v1.0
+ */
+@Configuration
+@ConditionalOnClass(WXPayService.class)
+@EnableConfigurationProperties(WxPayProperties.class)
+public class WxPayConfig {
+    @Autowired
+    private WxPayProperties properties;
+
+    /**
+     * 构造微信支付服务对象
+     * @return 微信支付接口
+     */
+    @Bean
+    @ConditionalOnMissingBean(WXPayService.class)
+    public WXPayService wxPayService() {
+        com.github.binarywang.wxpay.config.WxPayConfig payConfig = new com.github.binarywang.wxpay.config.WxPayConfig();
+        payConfig.setMchId(properties.getMchId());
+        payConfig.setAppId(properties.getAppId());
+        payConfig.setCertSerialNo(properties.getCertSerialNo());
+        payConfig.setPrivateKeyPath(properties.getPrivateKeyPath());
+        payConfig.setPrivateCertPath(properties.getPrivateCertPath());
+        payConfig.setApiV3Key(properties.getApiV3Key());
+        payConfig.setNotifyUrl(properties.getNotifyUrl());
+        WXPayServiceImpl wxPayService = new WXPayServiceImpl();
+        wxPayService.setConfig(payConfig);
+        return wxPayService;
+    }
+}
+```
+
+```java
+package com.github.Sigma429.config;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+/**
+ * ClassName:WxPayProperties
+ * Package:com.github.Sigma429.config.WxPayProperties
+ * Description:
+ * 微信支付属性类
+ * @Author:14亿少女的梦-Sigma429
+ * @Create:2023/08/23 - 14:48
+ * @Version:v1.0
+ */
+@Data
+@NoArgsConstructor
+@ConfigurationProperties(prefix = "wx.pay")
+public class WxPayProperties {
+    /**
+     * 微信支付商户号
+     */
+    private String mchId;
+
+    /**
+     * 设置微信公众号或者小程序等的appid
+     */
+    private String appId;
+
+    /**
+     * 证书序列号
+     */
+    private String certSerialNo;
+
+    /**
+     * apiclient_key.pem 证书文件的绝对路径或者以 classpath: 开头的类路径
+     */
+    private String privateKeyPath;
+
+    /**
+     * apiclient_cert.pem 证书文件的绝对路径或者以 classpath: 开头的类路径
+     */
+    private String privateCertPath;
+
+    /**
+     * apiV3 秘钥值
+     */
+    private String apiV3Key;
+
+    /**
+     * 微信支付回调地址，必须为直接可访问的url，不能携带参数
+     */
+    private String notifyUrl;
+}
+
+```
+
+#### 4.Controller层使用
+
+DemoController
 
 ```java
 package com.github.Sigma429.controller;
 
+import com.github.Sigma429.config.NativeNotify;
 import com.github.Sigma429.pojo.entity.Result;
 import com.github.Sigma429.service.WXPayService;
 import com.github.binarywang.wxpay.bean.notify.WxPayOrderNotifyV3Result;
 import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderV3Request;
 import com.github.binarywang.wxpay.bean.result.WxPayOrderQueryV3Result;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import jakarta.servlet.http.HttpServletRequest;
 
 import java.math.BigDecimal;
 
@@ -127,6 +253,7 @@ public class WeiXinPayController {
      * @return 结果
      * @throws Exception 异常
      */
+    @NativeNotify
     @PostMapping("/notify")
     public Result nativeNotify(HttpServletRequest request,
                                @RequestBody String notifyData) throws Exception {

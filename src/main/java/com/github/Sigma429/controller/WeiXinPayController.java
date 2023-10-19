@@ -1,5 +1,6 @@
 package com.github.Sigma429.controller;
 
+import com.github.Sigma429.config.NativeNotify;
 import com.github.Sigma429.pojo.entity.Result;
 import com.github.Sigma429.service.WXPayService;
 import com.github.binarywang.wxpay.bean.notify.WxPayOrderNotifyV3Result;
@@ -56,7 +57,7 @@ public class WeiXinPayController {
         String codeUrl = wxPayService.createOrderV3(request);
 
         // 测试把二维码输出到本地,正式环境通过流给前端
-        // wxPayService.printQRCodeToLocal(codeUrl, new StringBuilder("C:\\Users\\10597\\Desktop\\demo\\demo.jpg"));
+        wxPayService.printQRCodeToLocal(codeUrl, new StringBuilder("C:\\Users\\10597\\Desktop\\demo\\demo.jpg"));
 
         return Result.success(codeUrl);
     }
@@ -91,6 +92,7 @@ public class WeiXinPayController {
      * @return 结果
      * @throws Exception 异常
      */
+    @NativeNotify
     @PostMapping("/notify")
     public Result nativeNotify(HttpServletRequest request,
                                @RequestBody String notifyData) throws Exception {

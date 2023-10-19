@@ -4,7 +4,7 @@ import com.github.binarywang.wxpay.bean.notify.SignatureHeader;
 import jakarta.servlet.http.HttpServletRequest;
 
 /**
- * ClassName:WeixinNotifyUtils
+ * ClassName:WeiXinNotifyUtils
  * Package:tyut.selab.a2.biomassmall.util
  * Description:
  * @Author:14亿少女的梦-Sigma429

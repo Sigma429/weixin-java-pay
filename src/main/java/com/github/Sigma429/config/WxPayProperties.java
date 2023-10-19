@@ -1,4 +1,4 @@
-package com.github.Sigma429.properties;
+package com.github.Sigma429.config;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * ClassName:WxPayProperties
- * Package:tyut.selab.a2.biomassmall.properties
+ * Package:com.github.Sigma429.config.WxPayProperties
  * Description:
  * 微信支付属性类
  * @Author:14亿少女的梦-Sigma429

@@ -16,4 +16,4 @@ wx:
     # APIv3密钥
     api-v3-key: UDuLFDcmy5Eb6o0nTNZdu6ek4DDh4K8B
     # 接收结果通知地址
-    notify-url: https://de06-211-93-248-135.ngrok-free.app/weixin/pay/notify
+    notify-url: https://2cb0-211-93-248-135.ngrok-free.app/weixin/pay/notify

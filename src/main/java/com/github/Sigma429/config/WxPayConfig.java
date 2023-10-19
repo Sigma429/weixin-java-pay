@@ -1,7 +1,6 @@
 package com.github.Sigma429.config;
 
 
-import com.github.Sigma429.properties.WxPayProperties;
 import com.github.Sigma429.service.WXPayService;
 import com.github.Sigma429.service.impl.WXPayServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

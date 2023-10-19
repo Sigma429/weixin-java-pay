@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.locks.ReentrantLock;
@@ -27,12 +28,17 @@ import java.util.concurrent.locks.ReentrantLock;
 public class WxPayAspect {
     private final ReentrantLock orderLock = new ReentrantLock();
 
+    @Pointcut("@annotation(com.github.Sigma429.config.NativeNotify)")
+    public void nativeNotify() {
+
+    }
+
     /**
      * 设置回调接口的AOP
      * @param joinPoint 切点
      * @return 结果
      */
-    @Around("execution(* com.github.Sigma429.controller.WeiXinPayController.nativeNotify(..))")
+    @Around(value = "nativeNotify()")
     public Object aroundMethod(ProceedingJoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
         String notifyData = (String) args[1];
