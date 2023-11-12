@@ -1,4 +1,9 @@
+com\github\Sigma429\config\WxPayConfig.class
+com\github\Sigma429\service\impl\WXPayServiceImpl.class
+com\github\Sigma429\config\WxPayProperties.class
 com\github\Sigma429\pojo\entity\Result.class
 com\github\Sigma429\service\WXPayService.class
-com\github\Sigma429\service\impl\WXPayServiceImpl.class
 com\github\Sigma429\util\WeiXinNotifyUtils.class
+com\github\Sigma429\aspect\WxPayAspect.class
+com\github\Sigma429\config\NativeNotify.class
+com\github\Sigma429\WxPayAutoConfiguration.class
