@@ -1,4 +1,4 @@
-package com.github.Sigma429.config;
+package com.github.Sigma429.annotation;
 
 import java.lang.annotation.*;
 

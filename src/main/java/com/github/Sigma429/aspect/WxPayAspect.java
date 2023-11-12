@@ -28,7 +28,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class WxPayAspect {
     private final ReentrantLock orderLock = new ReentrantLock();
 
-    @Pointcut("@annotation(com.github.Sigma429.config.NativeNotify)")
+    @Pointcut("@annotation(com.github.Sigma429.annotation.NativeNotify)")
     public void nativeNotify() {
 
     }

@@ -45,7 +45,7 @@ wx:
 #### 3.启动类加入@Import注解
 
 ```java
-@Import(WxPayAutoConfiguration.class)
+@EnableWxPay
 @SpringBootApplication
 public class DemoApplication {
     public static void main(String[] args) {
@@ -69,7 +69,7 @@ public class DemoApplication {
 ```java
 package com.github.Sigma429.controller;
 
-import com.github.Sigma429.config.NativeNotify;
+import com.github.Sigma429.annotation.NativeNotify;
 import com.github.Sigma429.pojo.entity.Result;
 import com.github.Sigma429.service.WXPayService;
 import com.github.binarywang.wxpay.bean.notify.WxPayOrderNotifyV3Result;

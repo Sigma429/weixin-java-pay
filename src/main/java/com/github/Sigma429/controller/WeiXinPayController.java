@@ -1,6 +1,6 @@
 package com.github.Sigma429.controller;
 
-import com.github.Sigma429.config.NativeNotify;
+import com.github.Sigma429.annotation.NativeNotify;
 import com.github.Sigma429.pojo.entity.Result;
 import com.github.Sigma429.service.WXPayService;
 import com.github.binarywang.wxpay.bean.notify.WxPayOrderNotifyV3Result;

@@ -1,7 +1,7 @@
 package com.github.Sigma429;
 
 import com.github.Sigma429.aspect.WxPayAspect;
-import com.github.Sigma429.config.NativeNotify;
+import com.github.Sigma429.annotation.NativeNotify;
 import com.github.Sigma429.config.WxPayConfig;
 import com.github.Sigma429.config.WxPayProperties;
 import com.github.Sigma429.pojo.entity.Result;
