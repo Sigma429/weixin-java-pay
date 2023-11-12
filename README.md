@@ -42,7 +42,7 @@ wx:
     notify-url: https://de06-211-93-248-135.ngrok-free.app/weixin/pay/notify
 ```
 
-#### 3.启动类加入注解@Import
+#### 3.启动类加入@Import注解
 
 ```java
 @Import(WxPayAutoConfiguration.class)
