@@ -42,18 +42,6 @@ wx:
     notify-url: https://de06-211-93-248-135.ngrok-free.app/weixin/pay/notify
 ```
 
-#### 3.启动类加入@EnableWxPay注解
-
-```java
-@EnableWxPay
-@SpringBootApplication
-public class DemoApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
-}
-```
-
 ==至此，配置已完成，直接编写controller层代码即可，下图为项目结构==
 
 ![image-20231112161756524](imgs/image-20231112161756524.png)
