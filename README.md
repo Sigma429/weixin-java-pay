@@ -11,7 +11,7 @@
         <dependency>
             <groupId>com.github.Sigma429</groupId>
             <artifactId>weixin-java-pay</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </dependency>   
 ```
 
